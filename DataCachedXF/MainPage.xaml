@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
+    xmlns:vm="clr-namespace:DataCachedXF.ViewModels"
+    x:Class="DataCachedXF.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainVM  x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Monkey Cache" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Monkey Cache data:" FontSize="Title" Padding="30,10,30,10"/>
+            <Label Text="{Binding Data}" FontSize="16" Padding="30,0,30,0"/>
+
+            <Button Command="{Binding UpdateData}" Text="Update!"/>
+        
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
